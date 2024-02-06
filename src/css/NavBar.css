@@ -1,0 +1,14 @@
+.nav {
+  padding-left: 9rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.nav ul{
+  display: flex;
+  gap: 3rem;
+}
+
+.icon {
+  margin-left: 10rem;
+}
