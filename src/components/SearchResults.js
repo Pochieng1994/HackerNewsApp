@@ -1,7 +1,7 @@
 function SearchResults() {
   return (
     <div>
-      SearchList
+      SearchResults
     </div>
   )
 }
