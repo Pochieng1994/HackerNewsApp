@@ -4,23 +4,34 @@ import SearchBar from "./components/SearchBar";
 import MainNewsFeed from "./components/MainNewsFeed";
 import TrendingNews from "./components/TrendingNews";
 import SearchResults from "./components/SearchResults";
+import NavBar from "./components/NavBar";
 import 'bulma/css/bulma.css'
 import searchEveryNewsArticle from "./apiRequests/everythingApi";
 
 function App() {
 
   const [articles, setArticles] = useState([]);
-
+  
   const handleSubmit = async (term) => {
     const result = await searchEveryNewsArticle(term)
 
     setArticles(result);
   }
 
+  const [showSearchBar, setSearchBar] = useState(false);
+
+  const toggleOpenSearchBar = () => {
+    setSearchBar(!showSearchBar)
+  }
+
+  
+  
+
   return(
     <div>
       <MainHeader/>
-      <SearchBar onSubmit = {handleSubmit}/>
+      <NavBar toggleSearchBar = {toggleOpenSearchBar}/>
+      {showSearchBar && <SearchBar onSubmit =  {handleSubmit}/>}
       <MainNewsFeed/>
       <TrendingNews/>
       <SearchResults articles = {articles}/>

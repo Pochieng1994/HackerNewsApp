@@ -1,4 +1,3 @@
-import NavBar from './NavBar';
 import '../css/MainHeader.css';
 
 function MainHeader() {
@@ -10,9 +9,7 @@ function MainHeader() {
         </div>
       </div>
 
-      <div>
-        <NavBar/>
-      </div>
+
     </div>
   )
 }
