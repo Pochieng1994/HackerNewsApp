@@ -7,6 +7,7 @@ import SearchResults from "./components/SearchResults";
 import NavBar from "./components/NavBar";
 import 'bulma/css/bulma.css'
 import searchEveryNewsArticle from "./apiRequests/everythingApi";
+import searchTopHeadlines from "./apiRequests/topHeadlinesApi";
 
 function App() {
 
@@ -19,21 +20,24 @@ function App() {
   }
 
   const [showSearchBar, setSearchBar] = useState(false);
-
+  
   const toggleOpenSearchBar = () => {
     setSearchBar(!showSearchBar)
   }
 
   
-  
 
   return(
     <div>
-      <MainHeader/>
-      <NavBar toggleSearchBar = {toggleOpenSearchBar}/>
-      {showSearchBar && <SearchBar onSubmit =  {handleSubmit}/>}
-      <MainNewsFeed/>
-      <TrendingNews/>
+      {articles.length > 0 ? null : <MainHeader/>}
+      {
+        articles.length > 0 ? null : (
+          <NavBar toggleSearchBar = {toggleOpenSearchBar}/>
+        ) 
+      }
+      {showSearchBar && <SearchBar onSubmit =  {handleSubmit} />}
+      {articles.length > 0 ? null : <MainNewsFeed />}
+      {articles.length > 0 ? null: <TrendingNews/>}
       <SearchResults articles = {articles}/>
     </div>
   )

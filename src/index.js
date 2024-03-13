@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import searchTopHeadlines from "./apiRequests/topHeadlinesApi";
 
+searchTopHeadlines()
 
 const element = document.getElementById('root');
 

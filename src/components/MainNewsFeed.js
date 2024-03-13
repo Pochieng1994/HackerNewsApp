@@ -1,4 +1,6 @@
-function MainNewsFeed() {
+import TrendingNews from "./TrendingNews";
+
+function MainNewsFeed({showHeadlines}) {
   return (
     <div>
       Main News Feed

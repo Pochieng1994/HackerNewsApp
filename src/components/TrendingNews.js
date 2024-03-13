@@ -1,7 +1,7 @@
 function TrendingNews() {
   return (
     <div>
-      TrendingNews
+      Trending News
     </div>
   )
 }
