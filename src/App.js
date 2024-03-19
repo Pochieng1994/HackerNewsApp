@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import MainHeader from "./components/MainHeader";
 import SearchBar from "./components/SearchBar";
 import MainNewsFeed from "./components/MainNewsFeed";
@@ -7,7 +8,7 @@ import SearchResults from "./components/SearchResults";
 import NavBar from "./components/NavBar";
 import 'bulma/css/bulma.css'
 import searchEveryNewsArticle from "./apiRequests/everythingApi";
-import searchTopHeadlines from "./apiRequests/topHeadlinesApi";
+
 
 function App() {
 
@@ -19,11 +20,29 @@ function App() {
     setArticles(result);
   }
 
+
+
   const [showSearchBar, setSearchBar] = useState(false);
   
   const toggleOpenSearchBar = () => {
     setSearchBar(!showSearchBar)
   }
+
+
+
+  const [topNewsArticles, setTopNewsArticles] = useState([]);
+
+  const searchTopHeadlines = async () => {
+    const result = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=2fc5cddec8e0423eb7f0a1609f3c7dfe')
+  
+    setTopNewsArticles(result.data.articles)
+  
+  };
+
+  useEffect(() => {
+    searchTopHeadlines()
+  },[]);
+
 
   
 
@@ -36,7 +55,7 @@ function App() {
         ) 
       }
       {showSearchBar && <SearchBar onSubmit =  {handleSubmit} />}
-      {articles.length > 0 ? null : <MainNewsFeed />}
+      {articles.length > 0 ? null : <MainNewsFeed topNewsArticles ={topNewsArticles} />}
       {articles.length > 0 ? null: <TrendingNews/>}
       <SearchResults articles = {articles}/>
     </div>

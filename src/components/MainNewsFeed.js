@@ -1,9 +1,15 @@
-import TrendingNews from "./TrendingNews";
+import MainNewsFeedShow from "./MainNewsFeedShow";
 
-function MainNewsFeed({showHeadlines}) {
+function MainNewsFeed({topNewsArticles}) {
+  
+  const renderedTopNewsArticles = topNewsArticles.map((topNewsArticle) => {
+    return <MainNewsFeedShow key = {topNewsArticle.title} topNewsArticle = {topNewsArticle}/>
+  })
+
+
   return (
     <div>
-      Main News Feed
+      {renderedTopNewsArticles}
     </div>
   )
 }
