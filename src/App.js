@@ -30,17 +30,32 @@ function App() {
 
 
 
-  const [topNewsArticles, setTopNewsArticles] = useState([]);
+  const [mainNewsFeedArticles, setMainNewsFeedArticles] = useState([]);
 
   const searchTopHeadlines = async () => {
-    const result = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=2fc5cddec8e0423eb7f0a1609f3c7dfe')
-  
-    setTopNewsArticles(result.data.articles)
+    const result = await axios.get('https://newsapi.org/v2/everything?q=cybersecurity&apiKey=2fc5cddec8e0423eb7f0a1609f3c7dfe')
+    
+    setMainNewsFeedArticles(result.data.articles)
   
   };
 
+
+  const [trendingNewsArticles, setTrendingNewsArticles] = useState([]);
+
+  const searchTrendingNews = async () => {
+    const response = await axios.get('https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=2fc5cddec8e0423eb7f0a1609f3c7dfe')
+
+    setTrendingNewsArticles(response.data.articles)
+
+  }
+
+
+
+  
+
   useEffect(() => {
     searchTopHeadlines()
+    searchTrendingNews()
   },[]);
 
 
@@ -55,8 +70,21 @@ function App() {
         ) 
       }
       {showSearchBar && <SearchBar onSubmit =  {handleSubmit} />}
-      {articles.length > 0 ? null : <MainNewsFeed topNewsArticles ={topNewsArticles} />}
-      {articles.length > 0 ? null: <TrendingNews/>}
+
+      <div className="container">
+        <div className="columns">
+          <div className="column is-9">
+          {articles.length > 0 ? null : <MainNewsFeed mainNewsFeedArticles ={mainNewsFeedArticles} />}
+          </div>
+          <div className="column is-3">
+          {articles.length > 0 ? null: <TrendingNews trendingNewsArticles = {trendingNewsArticles}/>}
+          </div>
+        </div>
+      </div>
+
+      
+      
+      
       <SearchResults articles = {articles}/>
     </div>
   )

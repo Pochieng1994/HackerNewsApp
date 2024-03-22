@@ -1,9 +1,13 @@
 import MainNewsFeedShow from "./MainNewsFeedShow";
 
-function MainNewsFeed({topNewsArticles}) {
+function MainNewsFeed({mainNewsFeedArticles}) {
   
-  const renderedTopNewsArticles = topNewsArticles.map((topNewsArticle) => {
-    return <MainNewsFeedShow key = {topNewsArticle.title} topNewsArticle = {topNewsArticle}/>
+
+
+  const renderedTopNewsArticles = mainNewsFeedArticles.map((mainNewsFeedArticle, index) => {
+    if(index < 12) {
+      return <MainNewsFeedShow key = {mainNewsFeedArticle.title} mainNewsFeedArticle = {mainNewsFeedArticle}/>
+    }
   })
 
 

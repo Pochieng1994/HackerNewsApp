@@ -1,4 +1,4 @@
-import '../css/NewsArticleShow.css'
+import '../css/NewsArticleShow.css';
 
 function NewsArticleShow({article}) {
   

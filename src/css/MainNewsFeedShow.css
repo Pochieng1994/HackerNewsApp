@@ -1,0 +1,12 @@
+.col-1 {
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+
+
+.col-2 {
+  margin-left: -400px;
+}
