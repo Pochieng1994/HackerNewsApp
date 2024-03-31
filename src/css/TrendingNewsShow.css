@@ -1,0 +1,27 @@
+.image-div {
+  height: 90px;
+  width: 60px;
+  margin-top: 80px;
+  cursor: pointer;
+}
+
+.rendered-images {
+  height: 100%;
+  width: 100%;
+}
+
+.title-div {
+  margin-top: 80px;
+  font-size: 15px;
+  color: #425a78;
+  cursor: pointer;
+}
+
+.columns-div:hover {
+  text-decoration: underline;
+}
+
+
+
+
+

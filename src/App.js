@@ -6,8 +6,9 @@ import MainNewsFeed from "./components/MainNewsFeed";
 import TrendingNews from "./components/TrendingNews";
 import SearchResults from "./components/SearchResults";
 import NavBar from "./components/NavBar";
-import 'bulma/css/bulma.css'
+import 'bulma/css/bulma.css';
 import searchEveryNewsArticle from "./apiRequests/everythingApi";
+import './css/App.css'
 
 
 function App() {
@@ -73,11 +74,15 @@ function App() {
 
       <div className="container">
         <div className="columns">
-          <div className="column is-9">
-          {articles.length > 0 ? null : <MainNewsFeed mainNewsFeedArticles ={mainNewsFeedArticles} />}
+          <div className="column is-8">
+            {articles.length > 0 ? null : <MainNewsFeed mainNewsFeedArticles ={mainNewsFeedArticles} />}
           </div>
-          <div className="column is-3">
-          {articles.length > 0 ? null: <TrendingNews trendingNewsArticles = {trendingNewsArticles}/>}
+          <div className="trending-news-column column is-4">
+            <div className="horizontal-line-and-trending-title-div">
+              <div className="horizontal-line"></div>
+              <p className="trending-title has-text-weight-bold is-size-5 has-text-black">Trending News</p>
+            </div>
+            {articles.length > 0 ? null: <TrendingNews trendingNewsArticles = {trendingNewsArticles}/>}
           </div>
         </div>
       </div>

@@ -12,10 +12,10 @@ function MainNewsFeedShow({mainNewsFeedArticle}) {
             </div>
           </div>
           <div className="col-2 column">
-            <div>
+            <div className='has-text-weight-bold has-text-black'>
               {mainNewsFeedArticle.title}
             </div>
-            <div>
+            <div className='is-size-7 mt-5'>
               {mainNewsFeedArticle.description}
             </div>
           </div>

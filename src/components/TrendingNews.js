@@ -4,7 +4,7 @@ function TrendingNews({trendingNewsArticles}) {
 
   const renderedTrendingNewsArticles = trendingNewsArticles.map((trendingNewsArticle, index) => {
     if(index < 7) {
-      return <TrendingNewsShow trendingNewsArticle={trendingNewsArticle}/>
+      return <TrendingNewsShow key ={trendingNewsArticle.title} trendingNewsArticle={trendingNewsArticle}/>
     }
   })
 

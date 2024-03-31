@@ -3,10 +3,19 @@
   height: 150px;
   overflow: hidden;
   border-radius: 5px;
+  margin-top: 80px;
+  margin-left: 50px;
+  margin-bottom: -50px;
 }
 
 
 
 .col-2 {
-  margin-left: -400px;
+  margin-left: -200px;
+  margin-top: 80px;
+  color: #425a78;
+  
 }
+
+
+
