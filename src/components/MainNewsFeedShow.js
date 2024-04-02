@@ -1,18 +1,23 @@
 import '../css/MainNewsFeedShow.css';
 
 function MainNewsFeedShow({mainNewsFeedArticle}) {
+  const handleClick = () => {
+    window.open(mainNewsFeedArticle.url, '_blank');
+  }
+
+
   return(
     <div>
 
       <div className="container">
         <div className="columns">
-          <div className="column">
+          <div onClick={handleClick} className="column">
             <div className='col-1'>
-              <img src= {mainNewsFeedArticle.urlToImage}/>
+              <img className='main-news-feed-image' src= {mainNewsFeedArticle.urlToImage}/>
             </div>
           </div>
-          <div className="col-2 column">
-            <div className='has-text-weight-bold has-text-black'>
+          <div onClick={handleClick} className="col-2 column">
+            <div className='main-news-title has-text-weight-bold has-text-black'>
               {mainNewsFeedArticle.title}
             </div>
             <div className='is-size-7 mt-5'>
