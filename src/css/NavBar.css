@@ -12,3 +12,36 @@
 .icon {
   margin-left: 10rem;
 }
+
+.li-1 {
+  cursor: pointer;
+}
+
+
+.li-2 {
+  cursor: pointer;
+}
+
+.li-3 {
+  cursor: pointer;
+}
+
+.li-4 {
+  cursor: pointer;
+}
+
+.li-5 {
+  cursor: pointer;
+}
+
+.li-6 {
+  cursor: pointer;
+}
+
+.li-7 {
+  cursor: pointer;
+}
+
+.nav-div {
+  border-bottom: 3px solid #dee2e8;
+}

@@ -9,16 +9,16 @@ function NavBar({toggleSearchBar}) {
   }
 
   return (
-    <div>
+    <div className='nav-div'>
       <nav className='nav'>
           <ul>
-            <li>Home</li>
-            <li>Data Breaches</li>
-            <li>Cyber Attacks</li>
-            <li>Vulnerabilities</li>
-            <li>Webinars</li>
-            <li>Store</li>
-            <li>Contact</li>
+            <li className='li-1 has-text-weight-semibold'>Home</li>
+            <li className='li-2 has-text-weight-semibold'>Data Breaches</li>
+            <li className='li-3 has-text-weight-semibold'>Cyber Attacks</li>
+            <li className='li-4 has-text-weight-semibold'>Vulnerabilities</li>
+            <li className='li-5 has-text-weight-semibold'>Webinars</li>
+            <li className='li-6 has-text-weight-semibold'>Store</li>
+            <li className='li-7 has-text-weight-semibold'>Contact</li>
             <li><FaSearch onClick = {handleClick} className='icon is-size-5'/></li>
             <li><GiHamburgerMenu className='is-size-5'/></li>
           </ul>
