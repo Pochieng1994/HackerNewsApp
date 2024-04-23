@@ -1,5 +1,5 @@
 import { useState } from "react";
-import '../css/SearchBar.css'
+import '../css/SearchBar.css';
 
 
 function SearchBar({onSubmit}) {
